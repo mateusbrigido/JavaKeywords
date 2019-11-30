@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6602EDA02392ECD30039D0C6 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6602ED9F2392ECD30039D0C6 /* GameState.swift */; };
 		664DFE762392A2C6003A97C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DFE752392A2C6003A97C1 /* AppDelegate.swift */; };
 		664DFE782392A2C6003A97C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DFE772392A2C6003A97C1 /* SceneDelegate.swift */; };
 		664DFE7A2392A2C6003A97C1 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DFE792392A2C6003A97C1 /* QuestionViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6602ED9F2392ECD30039D0C6 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		664DFE722392A2C6003A97C1 /* JavaKeywords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JavaKeywords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		664DFE752392A2C6003A97C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		664DFE772392A2C6003A97C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,11 +107,11 @@
 		664DFE742392A2C6003A97C1 /* JavaKeywords */ = {
 			isa = PBXGroup;
 			children = (
+				664DFEAD2392C754003A97C1 /* Controller */,
 				664DFEAA2392AC83003A97C1 /* Network */,
 				664DFEA52392A783003A97C1 /* Model */,
 				664DFE752392A2C6003A97C1 /* AppDelegate.swift */,
 				664DFE772392A2C6003A97C1 /* SceneDelegate.swift */,
-				664DFE792392A2C6003A97C1 /* QuestionViewController.swift */,
 				664DFE7B2392A2C6003A97C1 /* Main.storyboard */,
 				664DFE7E2392A2C6003A97C1 /* Assets.xcassets */,
 				664DFE802392A2C6003A97C1 /* LaunchScreen.storyboard */,
@@ -139,6 +141,7 @@
 		664DFEA52392A783003A97C1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6602ED9F2392ECD30039D0C6 /* GameState.swift */,
 				664DFEA82392ABD1003A97C1 /* Question.swift */,
 				664DFEA62392A790003A97C1 /* Countdown.swift */,
 			);
@@ -151,6 +154,14 @@
 				664DFEAB2392AC9B003A97C1 /* QuestionService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		664DFEAD2392C754003A97C1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				664DFE792392A2C6003A97C1 /* QuestionViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6602EDA02392ECD30039D0C6 /* GameState.swift in Sources */,
 				664DFEA92392ABD1003A97C1 /* Question.swift in Sources */,
 				664DFE7A2392A2C6003A97C1 /* QuestionViewController.swift in Sources */,
 				664DFE762392A2C6003A97C1 /* AppDelegate.swift in Sources */,
