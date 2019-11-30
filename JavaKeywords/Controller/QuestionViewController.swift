@@ -11,6 +11,8 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet weak var startResetButton: UIButton!
     
+    @IBOutlet weak var bottomConstraintForKeyboard: NSLayoutConstraint!
+    
     lazy private var countdown = Countdown(duration: 300, tick: { [weak self] (remaininingTime) in
         DispatchQueue.main.async {
             self?.countdownLabel.text = remaininingTime
@@ -40,6 +42,7 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerKeyboardNotifications()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -135,5 +138,36 @@ extension QuestionViewController {
         alertController.addAction(tryAgainAction)
         
         self.present(alertController, animated: true)
+    }
+}
+
+//MARK: - Keyboard management
+extension QuestionViewController {
+    func registerKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
+    @objc func keyboardWillShow(sender: NSNotification) {
+        guard let keyboardFrame = sender.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        
+        bottomConstraintForKeyboard.constant = keyboardFrame.cgRectValue.height - view.safeAreaInsets.bottom 
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded();
+        }
+    }
+    
+    @objc func keyboardWillHide(sender: NSNotification) {
+        bottomConstraintForKeyboard.constant = 0
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded();
+        }
     }
 }
