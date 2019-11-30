@@ -11,11 +11,27 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet weak var startResetButton: UIButton!
     
+    private var rightAnswers = [String]()
+    
+    private var question: Question! {
+        didSet {
+            DispatchQueue.main.async {
+                self.questionLabel.text = self.question.text
+                self.scoreLabel.text = String(format: "%02d/%02d", self.rightAnswers.count, self.question.answersTotal)
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        QuestionService.shared.loadData { (question) in
+            self.question = question
+        }
+    }
+    
 }
 
