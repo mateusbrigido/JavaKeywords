@@ -37,15 +37,15 @@
                                             <action selector="textfieldEdited:" destination="BYZ-38-t0r" eventType="editingChanged" id="FSj-ZX-frW"/>
                                         </connections>
                                     </textField>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NDz-2s-nRj">
-                                        <rect key="frame" x="0.0" y="139" width="414" height="551"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NDz-2s-nRj">
+                                        <rect key="frame" x="0.0" y="131" width="414" height="559"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerCell" id="ZW1-vn-FrW">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerCell" rowHeight="60" id="ZW1-vn-FrW">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZW1-vn-FrW" id="Fsl-4N-kPA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -56,7 +56,7 @@
                                 <constraints>
                                     <constraint firstItem="WlD-LM-ibL" firstAttribute="leading" secondItem="vNZ-kc-Vjn" secondAttribute="leading" constant="16" id="0SG-Xs-ElU"/>
                                     <constraint firstAttribute="bottom" secondItem="NDz-2s-nRj" secondAttribute="bottom" id="5Jk-AL-WqH"/>
-                                    <constraint firstItem="NDz-2s-nRj" firstAttribute="top" secondItem="dC6-Gj-Oqp" secondAttribute="bottom" constant="16" id="AaZ-FQ-gfP"/>
+                                    <constraint firstItem="NDz-2s-nRj" firstAttribute="top" secondItem="dC6-Gj-Oqp" secondAttribute="bottom" constant="8" id="AaZ-FQ-gfP"/>
                                     <constraint firstItem="dC6-Gj-Oqp" firstAttribute="leading" secondItem="vNZ-kc-Vjn" secondAttribute="leading" constant="16" id="KmH-L8-g5O"/>
                                     <constraint firstAttribute="trailing" secondItem="WlD-LM-ibL" secondAttribute="trailing" constant="16" id="Lhy-0w-t0u"/>
                                     <constraint firstAttribute="trailing" secondItem="NDz-2s-nRj" secondAttribute="trailing" id="Mrv-Iy-GGr"/>

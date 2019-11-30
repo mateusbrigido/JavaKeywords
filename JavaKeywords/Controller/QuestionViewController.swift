@@ -114,7 +114,7 @@ extension QuestionViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerCell", for: indexPath)
         cell.textLabel?.text = self.gameState.rightAnswers[indexPath.row]
-        
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 17)
         return cell
     }
 }
