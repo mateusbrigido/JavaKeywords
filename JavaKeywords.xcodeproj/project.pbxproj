@@ -15,6 +15,9 @@
 		664DFE822392A2C6003A97C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 664DFE802392A2C6003A97C1 /* LaunchScreen.storyboard */; };
 		664DFE8D2392A2C6003A97C1 /* JavaKeywordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DFE8C2392A2C6003A97C1 /* JavaKeywordsTests.swift */; };
 		664DFE982392A2C6003A97C1 /* JavaKeywordsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DFE972392A2C6003A97C1 /* JavaKeywordsUITests.swift */; };
+		664DFEA72392A790003A97C1 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DFEA62392A790003A97C1 /* Countdown.swift */; };
+		664DFEA92392ABD1003A97C1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DFEA82392ABD1003A97C1 /* Question.swift */; };
+		664DFEAC2392AC9B003A97C1 /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664DFEAB2392AC9B003A97C1 /* QuestionService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		664DFE932392A2C6003A97C1 /* JavaKeywordsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JavaKeywordsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		664DFE972392A2C6003A97C1 /* JavaKeywordsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaKeywordsUITests.swift; sourceTree = "<group>"; };
 		664DFE992392A2C6003A97C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		664DFEA62392A790003A97C1 /* Countdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
+		664DFEA82392ABD1003A97C1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		664DFEAB2392AC9B003A97C1 /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 		664DFE742392A2C6003A97C1 /* JavaKeywords */ = {
 			isa = PBXGroup;
 			children = (
+				664DFEAA2392AC83003A97C1 /* Network */,
+				664DFEA52392A783003A97C1 /* Model */,
 				664DFE752392A2C6003A97C1 /* AppDelegate.swift */,
 				664DFE772392A2C6003A97C1 /* SceneDelegate.swift */,
 				664DFE792392A2C6003A97C1 /* QuestionViewController.swift */,
@@ -126,6 +134,23 @@
 				664DFE992392A2C6003A97C1 /* Info.plist */,
 			);
 			path = JavaKeywordsUITests;
+			sourceTree = "<group>";
+		};
+		664DFEA52392A783003A97C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				664DFEA82392ABD1003A97C1 /* Question.swift */,
+				664DFEA62392A790003A97C1 /* Countdown.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		664DFEAA2392AC83003A97C1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				664DFEAB2392AC9B003A97C1 /* QuestionService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				664DFEA92392ABD1003A97C1 /* Question.swift in Sources */,
 				664DFE7A2392A2C6003A97C1 /* QuestionViewController.swift in Sources */,
 				664DFE762392A2C6003A97C1 /* AppDelegate.swift in Sources */,
+				664DFEAC2392AC9B003A97C1 /* QuestionService.swift in Sources */,
 				664DFE782392A2C6003A97C1 /* SceneDelegate.swift in Sources */,
+				664DFEA72392A790003A97C1 /* Countdown.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,13 +463,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 427JYDFXVU;
+				DEVELOPMENT_TEAM = 22W23U82TZ;
 				INFOPLIST_FILE = JavaKeywords/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mateusbrigido.javakeywords;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mateusbrigido.arctouch.javakeywords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -453,13 +481,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 427JYDFXVU;
+				DEVELOPMENT_TEAM = 22W23U82TZ;
 				INFOPLIST_FILE = JavaKeywords/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mateusbrigido.javakeywords;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mateusbrigido.arctouch.javakeywords;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

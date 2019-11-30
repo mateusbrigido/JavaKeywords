@@ -30,10 +30,23 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textfieldEdited:" destination="BYZ-38-t0r" eventType="editingChanged" id="FSj-ZX-frW"/>
+                                </connections>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NDz-2s-nRj">
                                 <rect key="frame" x="0.0" y="207.5" width="414" height="536.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerCell" id="ZW1-vn-FrW">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZW1-vn-FrW" id="Fsl-4N-kPA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFq-rl-QW0">
                                 <rect key="frame" x="0.0" y="744" width="414" height="118"/>
@@ -98,7 +111,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="answerTextField" destination="dC6-Gj-Oqp" id="1WQ-wT-TfF"/>
                         <outlet property="answersTableView" destination="NDz-2s-nRj" id="trd-c0-qOf"/>
                         <outlet property="countdownLabel" destination="M1C-fH-gSD" id="kXL-q7-HXS"/>
                         <outlet property="questionLabel" destination="WlD-LM-ibL" id="Ufc-tv-T6p"/>
