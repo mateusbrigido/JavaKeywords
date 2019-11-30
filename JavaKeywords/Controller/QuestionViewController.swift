@@ -10,6 +10,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var countdownLabel: UILabel!
     
     @IBOutlet weak var startResetButton: UIButton!
+    @IBOutlet weak var contentView: UIView!
     
     @IBOutlet weak var bottomConstraintForKeyboard: NSLayoutConstraint!
     
@@ -42,15 +43,20 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentView.isHidden = true
         registerKeyboardNotifications()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        let loadingAlert = self.showLoadingAlert()
+        
         QuestionService.shared.loadData { (question) in
             self.gameState = GameState(question: question)
             DispatchQueue.main.async {
+                loadingAlert.dismiss(animated: false)
                 self.questionLabel.text = self.gameState.question.text
+                self.contentView.isHidden = false
                 self.answersTableView.dataSource = self
                 self.answersTableView.delegate = self
             }
@@ -111,6 +117,22 @@ extension QuestionViewController: UITableViewDataSource, UITableViewDelegate {
 
 //MARK: - Alert Management
 extension QuestionViewController {
+    private func showLoadingAlert() -> UIAlertController {
+        let title = "Loading"
+        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 40, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = .medium
+        loadingIndicator.startAnimating()
+        
+        alertController.view.addSubview(loadingIndicator)
+        
+        self.present(alertController, animated: true)
+        
+        return alertController
+    }
+    
     private func showCongratulationsAlert() {
         let title = "Congratulations"
         let message = "Good job! You found all the answers on time. Keep up with the great work"

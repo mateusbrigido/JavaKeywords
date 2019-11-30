@@ -129,6 +129,7 @@
                         <outlet property="answerTextField" destination="dC6-Gj-Oqp" id="M3k-96-bEd"/>
                         <outlet property="answersTableView" destination="NDz-2s-nRj" id="trd-c0-qOf"/>
                         <outlet property="bottomConstraintForKeyboard" destination="naw-C3-Pe6" id="mFd-7G-4Us"/>
+                        <outlet property="contentView" destination="vNZ-kc-Vjn" id="GsG-WY-rsx"/>
                         <outlet property="countdownLabel" destination="M1C-fH-gSD" id="kXL-q7-HXS"/>
                         <outlet property="questionLabel" destination="WlD-LM-ibL" id="Ufc-tv-T6p"/>
                         <outlet property="scoreLabel" destination="kC1-Ge-YvJ" id="Pne-LR-QhJ"/>
