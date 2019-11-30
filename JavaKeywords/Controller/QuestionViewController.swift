@@ -9,8 +9,12 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var countdownLabel: UILabel!
     
-    @IBOutlet weak var startResetButton: UIButton!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var startResetButton: UIButton! {
+        didSet {
+            startResetButton.round(radius: 5)
+        }
+    }
     
     @IBOutlet weak var bottomConstraintForKeyboard: NSLayoutConstraint!
     
@@ -35,7 +39,7 @@ class QuestionViewController: UIViewController {
                     self.startResetButton.setTitle("Start", for: .normal)
                     self.answerTextField.isEnabled = false
                     self.answerTextField.resignFirstResponder()
-                    self.countdownLabel.text = "00:00"
+                    self.countdownLabel.text = "05:00"
                 }
             }
         }

@@ -78,7 +78,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1C-fH-gSD">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1C-fH-gSD">
                                                 <rect key="frame" x="209" y="0.0" width="173" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                 <nil key="textColor"/>
@@ -133,7 +133,7 @@
                         <outlet property="countdownLabel" destination="M1C-fH-gSD" id="kXL-q7-HXS"/>
                         <outlet property="questionLabel" destination="WlD-LM-ibL" id="Ufc-tv-T6p"/>
                         <outlet property="scoreLabel" destination="kC1-Ge-YvJ" id="Pne-LR-QhJ"/>
-                        <outlet property="startResetButton" destination="dX2-c5-1M5" id="Z9Z-r0-n3F"/>
+                        <outlet property="startResetButton" destination="dX2-c5-1M5" id="YVn-In-JXt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
