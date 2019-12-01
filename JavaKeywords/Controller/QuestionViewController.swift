@@ -73,7 +73,7 @@ class QuestionViewController: UIViewController {
 
         if let matchedText = gameState.checkWord(text) {
             gameState.addRightAnswer(matchedText)
-            sender.text = ""
+            sender.clear()
             answersTableView.reloadData()
             
             if gameState.won {
@@ -101,6 +101,7 @@ class QuestionViewController: UIViewController {
         gameState.reset()
         countdown.stop()
         
+        answerTextField.clear()
         answersTableView.reloadData()
     }
     
