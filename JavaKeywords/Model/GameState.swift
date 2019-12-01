@@ -36,6 +36,7 @@ struct GameState {
     }
     
     mutating func reset() {
+        answers = question.answers
         rightAnswers = [String]()
         isRunning = false
     }
