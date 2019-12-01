@@ -10,7 +10,7 @@ class Countdown {
     private var tick: ((String?) -> ())?
     private var timeOver: (() -> ())?
     
-    var formattedDuration: String { return self.formatter.string(from: TimeInterval(self.secondsRemaining)) ?? "00:00" }
+    var formattedDuration: String { return self.formatter.string(from: TimeInterval(self.duration)) ?? "00:00" }
     
     init(duration: Int, tick: ((String?) -> ())?, timeOver: (() -> ())?) {
         self.duration = duration
@@ -29,14 +29,14 @@ class Countdown {
         secondsRemaining = duration
         
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [unowned self] (timer) in
+            self.secondsRemaining -= 1
+            let secondsRemainingAsString = self.formatter.string(from: TimeInterval(self.secondsRemaining))
+            self.tick?(secondsRemainingAsString)
+            
             if self.secondsRemaining == 0 {
                 self.stop()
                 self.timeOver?()
             }
-            
-            let secondsRemainingAsString = self.formatter.string(from: TimeInterval(self.secondsRemaining))
-            self.secondsRemaining -= 1
-            self.tick?(secondsRemainingAsString)
         })
     }
     
