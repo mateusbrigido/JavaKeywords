@@ -56,8 +56,17 @@ class QuestionViewController: UIViewController {
         super.viewDidAppear(true)
         let loadingAlert = self.showLoadingAlert()
         
-        QuestionService.shared.loadData { (question) in
-            self.gameState = GameState(question: question)
+        QuestionService.shared.loadData { (question, error) in
+            if error != nil {
+                DispatchQueue.main.async {
+                    loadingAlert.dismiss(animated: false) {
+                        self.showErrorAlert()
+                    }
+                }
+                return
+            }
+            
+            self.gameState = GameState(question: question!)
             DispatchQueue.main.async {
                 loadingAlert.dismiss(animated: false)
                 self.questionLabel.text = self.gameState.question.text
@@ -164,6 +173,20 @@ extension QuestionViewController {
         })
         
         alertController.addAction(tryAgainAction)
+        
+        self.present(alertController, animated: true)
+    }
+    
+    private func showErrorAlert() {
+        let title = "Oops"
+        let message = "Something went wrong, and we can not continue..."
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: { [unowned alertController] (alertAction) in
+            alertController.dismiss(animated: true)
+        })
+        
+        alertController.addAction(okAction)
         
         self.present(alertController, animated: true)
     }
