@@ -39,7 +39,7 @@ class QuestionViewController: UIViewController {
                     self.startResetButton.setTitle("Start", for: .normal)
                     self.answerTextField.isEnabled = false
                     self.answerTextField.resignFirstResponder()
-                    self.countdownLabel.text = "05:00"
+                    self.countdownLabel.text = self.countdown.formattedDuration
                 }
             }
         }
@@ -48,6 +48,7 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         contentView.isHidden = true
+        countdownLabel.text = countdown.formattedDuration
         registerKeyboardNotifications()
     }
     

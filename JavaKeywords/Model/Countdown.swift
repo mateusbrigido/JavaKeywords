@@ -10,6 +10,8 @@ class Countdown {
     private var tick: ((String?) -> ())?
     private var timeOver: (() -> ())?
     
+    var formattedDuration: String { return self.formatter.string(from: TimeInterval(self.secondsRemaining)) ?? "00:00" }
+    
     init(duration: Int, tick: ((String?) -> ())?, timeOver: (() -> ())?) {
         self.duration = duration
         self.secondsRemaining = duration
